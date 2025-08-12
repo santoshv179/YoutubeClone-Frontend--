@@ -43,20 +43,6 @@
 | **Real-time Features** | ✅ | Real-time updates and notifications |
 | **Responsive Layout** | ✅ | Responsive layout for all devices |
 
-## 🚀 Getting Started
-
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-
-2. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-
-3. **Access the application:**
-   - Open http://localhost:3000 in your browser
 
 ## 📊 Performance Features
 
@@ -73,8 +59,54 @@
 - **Channel Management**: Full channel creation and management
 - **Video System**: Complete video player and detail page
 - **Authentication**: Enhanced AuthContext with channel state
-- **Responsive Layout**: Responsive layout for all devices
+- **Responsive Layout**: Responsive layout for all devicesm.
 
-## 📞 Support
 
-For any questions or issues, please contact the development team.
+## 🚀 Getting Started
+
+git clone https://github.com/santoshv179/Youtube-Clone-Frontend-.git
+
+1. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+2. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+3. **Access the application:**
+   - Open http://localhost:5175 in your browser
+
+
+
+ API Endpoints Overview
+ 
+| Resource     | Method | Endpoint                     | Description                |
+| ------------ | ------ | ---------------------------- | -------------------------- |
+| **Auth**     | POST   | `/auth/login`                | Login user                 |
+|              | POST   | `/auth/register`             | Register new user          |
+|              | GET    | `/auth/me`                   | Get current logged-in user |
+| **Videos**   | GET    | `/videos`                    | Get all videos             |
+|              | GET    | `/videos/:id`                | Get video by ID            |
+|              | POST   | `/videos`                    | Upload video               |
+|              | PUT    | `/videos/:id`                | Update video               |
+|              | DELETE | `/videos/:id`                | Delete video               |
+|              | POST   | `/videos/:id/like`           | Like video                 |
+|              | POST   | `/videos/:id/dislike`        | Dislike video              |
+| **Channels** | GET    | `/channels`                  | Get all channels           |
+|              | GET    | `/channels/:id`              | Get channel by ID          |
+|              | GET    | `/channels/me`               | Get my channel             |
+|              | POST   | `/channels`                  | Create channel             |
+|              | PUT    | `/channels/:id`              | Update channel             |
+|              | DELETE | `/channels/:id`              | Delete channel             |
+|              | POST   | `/channels/:id/subscribe`    | Subscribe                  |
+|              | POST   | `/channels/:id/unsubscribe`  | Unsubscribe                |
+| **Comments** | GET    | `/comments/:videoId`         | Get comments for video     |
+|              | POST   | `/comments/:videoId`         | Create comment             |
+|              | PUT    | `/comments/:commentId`       | Update comment             |
+|              | DELETE | `/comments/:commentId`       | Delete comment             |
+| **Filters**  | GET    | `/videos/filters`            | Get filters                |
+|              | GET    | `/videos/category`           | Get all categories         |
+|              | GET    | `/videos/category/:category` | Get videos by category     |
