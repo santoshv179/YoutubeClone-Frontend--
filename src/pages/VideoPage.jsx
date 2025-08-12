@@ -78,7 +78,7 @@ export default function VideoPage() {
       const fetchedVideo = videoRes.data;
       setVideo(fetchedVideo);
       setComments(commentsRes.data || []);
-      setRelatedVideos(relatedRes.data.filter((v) => v._id !== id) || []);
+      setRelatedVideos(relatedRes.data.filter((v) => v._id !== id) || []);//filter out the current video from related videos
 
       if (user && fetchedVideo.channel?._id) {
         const channelRes = await apiService.getChannel(fetchedVideo.channel._id);
@@ -225,7 +225,7 @@ export default function VideoPage() {
 
   const descriptionLength = video.description?.length || 0;
   const showReadMore = descriptionLength > 200; // Adjust this value as needed
-  const displayedDescription =
+  const displayedDescription =                // Show full description if expanded
     showReadMore && !isDescriptionExpanded
       ? `${video.description.substring(0, 200)}...`
       : video.description;

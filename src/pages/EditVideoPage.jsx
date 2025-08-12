@@ -5,10 +5,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ErrorMessage from '../components/ErrorMessage';
 import { FaSave, FaArrowLeft } from 'react-icons/fa';
 
-/**
- * EditVideoPage Component
- * This component fetches video details and provides a form to update them.
- */
+// Page to edit video details
 export default function EditVideoPage() {
     // Get the video ID from the URL parameters
     const { id } = useParams();

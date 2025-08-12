@@ -1,21 +1,6 @@
-// import React from 'react'
-
-// export default function LoadingSpinner({ size = 'medium', className = '' }) {
-//   const sizeClasses = {
-//     small: 'h-4 w-4',
-//     medium: 'h-8 w-8',
-//     large: 'h-12 w-12',
-//   }
-
-//   return (
-//     <div className={`flex items-center justify-center ${className}`}>
-//       <div className={`animate-spin rounded-full border-b-2 border-blue-600 ${sizeClasses[size]}`}></div>
-//     </div>
-//   )
-// }
 
 import React from 'react';
-
+// LoadingSpinner component
 export default function LoadingSpinner({ size = 'medium', className = '' }) {
   const sizeClasses = {
     small: 'h-6 w-6 border-[3px]',
@@ -23,7 +8,7 @@ export default function LoadingSpinner({ size = 'medium', className = '' }) {
     large: 'h-16 w-16 border-5',
   };
 
-  const spinnerClass = sizeClasses[size] || sizeClasses.medium;
+  const spinnerClass = sizeClasses[size] || sizeClasses.medium;  // Default to medium size
 
   return (
     <div className={`flex flex-col items-center justify-center min-h-screen bg-gray-50 text-gray-700 ${className}`}>

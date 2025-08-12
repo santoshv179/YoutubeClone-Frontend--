@@ -12,6 +12,7 @@ export const SidebarProvider = ({ children }) => {
     setIsOpen(!isOpen)
   }
 
+  // Toggle mobile sidebar
   const toggleMobileSidebar = () => {
     setIsMobileOpen(!isMobileOpen)
   }
@@ -33,7 +34,7 @@ export const SidebarProvider = ({ children }) => {
       }
     }
 
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize)// Add resize event listener
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 

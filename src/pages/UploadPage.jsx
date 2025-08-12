@@ -11,9 +11,9 @@ export default function UploadPage() {
   
   const [formData, setFormData] = useState({
     title: '',
-    description: '',
-    category: 'Entertainment',
-    tags: '',
+    description: '',// optional
+    category: 'Entertainment',//by default
+    tags: '',//optional
     videoUrl: '', 
     thumbnailUrl: '', // (optional) 
   })

@@ -33,6 +33,8 @@ export default function CreateChannelPage() {
     setError('')
   }
 
+
+// Handle file changes for avatar and banner
   const handleAvatarChange = (e) => {
     const file = e.target.files[0]
     if (file && file.type.startsWith('image/')) {
@@ -68,10 +70,10 @@ export default function CreateChannelPage() {
       if (formData.website) data.append('website', formData.website)
       if (formData.location) data.append('location', formData.location)
       if (avatarFile) data.append('avatar', avatarFile)
-      if (bannerFile) data.append('banner', bannerFile)
+      if (bannerFile) data.append('banner', bannerFile) 
 
       await apiService.createChannel(data)
-      await refreshChannel()
+      await refreshChannel() // Refresh user channel data
       navigate('/')
     } catch (err) {
       setError(err.response?.data?.message || 'Channel creation failed')

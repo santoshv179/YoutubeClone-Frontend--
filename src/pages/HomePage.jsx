@@ -28,6 +28,7 @@ export default function HomePage() {
     }
   }, [selectedFilter]);
 
+  // Fetch filters and videos
   const fetchFiltersAndVideos = async () => {
     setLoading(true);
     try {

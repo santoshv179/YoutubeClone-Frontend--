@@ -1,5 +1,3 @@
-
-
 import React, { useContext, useState, useEffect } from 'react';
 import { EnhancedAuthContext } from '../context/EnhancedAuthContext';
 import { SidebarContext } from '../context/SidebarContext';
@@ -29,6 +27,7 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isMobileSearchOpen]);
 
+  // Handle search submission
   const handleSearch = (e) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -38,24 +37,28 @@ export default function Header() {
     }
   };
 
+  // Handle logout
   const handleLogout = () => {
     logout();
     navigate('/');
     setIsDropdownOpen(false);
   };
 
+  // toggle sidebar
   const handleToggleSidebar = () => {
-    if (window.innerWidth < 768) {
-      toggleMobileSidebar();
+    if (window.innerWidth < 768) {  
+      toggleMobileSidebar();// Toggle mobile sidebar
     } else {
       toggleSidebar();
     }
   };
 
+  // toggle mobile search bar
   const handleToggleMobileSearch = () => {
     setIsMobileSearchOpen(!isMobileSearchOpen);
   };
 
+  // Render header
   if (loading) {
     return (
       <header className="bg-white shadow-sm p-4 flex items-center justify-between">
@@ -67,6 +70,7 @@ export default function Header() {
   }
 
   return (
+    // Header component
     <header className="bg-white shadow-sm border-b sticky top-0 z-30">
       <div className="flex items-center justify-between px-4 py-3">
         {/* Left Section */}
@@ -105,6 +109,7 @@ export default function Header() {
 
         {/* Right Section */}
         <div className="flex items-center gap-4">
+
           {/* Mobile Search Icon */}
           <button
             onClick={handleToggleMobileSearch}
@@ -188,7 +193,7 @@ export default function Header() {
         </div>
       </div>
       
-      {/* 🔹 Mobile Search bar (conditionally rendered) */}
+      {/*  Mobile Search bar (conditionally rendered) */}
       {isMobileSearchOpen && (
         <div className="mobile-search-container bg-white px-4 py-2 border-b sm:hidden">
           <form onSubmit={handleSearch} className="flex w-full">

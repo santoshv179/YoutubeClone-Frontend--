@@ -39,19 +39,16 @@ export default function ChannelSettingsPage() {
             }
         };
 
-        // यह महत्वपूर्ण लॉजिक है जो जाँचता है कि क्या user इस चैनल का मालिक है।
-        // अब यह `channel` ऑब्जेक्ट का उपयोग करता है।
+        
         if (user && channel && channel._id === id) {
             fetchChannelData();
         } else {
-            // अगर IDs match नहीं करती हैं, तो यह आपको वापस चैनल पेज पर भेज देता है।
-            // या यदि `user` या `channel` डेटा अभी तक लोड नहीं हुआ है,
-            // तो यह प्रतीक्षा करेगा और फिर से चलेगा।
-            if (!loading) { // केवल तभी navigate करें जब लोडिंग पूरी हो जाए
+         
+            if (!loading) { // If not loading, fetch channel data
                 navigate(`/channel/${id}`);
             }
         }
-    }, [id, user, channel, navigate, loading]); // 'channel' और 'loading' को निर्भरता में जोड़ें
+    }, [id, user, channel, navigate, loading]); // Fetch channel data when component mounts or user/channel changes
 
     const handleChange = (e) => {
         setFormState({
@@ -76,7 +73,7 @@ export default function ChannelSettingsPage() {
         }
     };
 
-    if (loading) return <LoadingSpinner />;
+    if (loading) return <LoadingSpinner />;// Show loading spinner while fetching data
     if (error) return <ErrorMessage message={error} />;
     if (!channelData) return <ErrorMessage message="Channel data not found." />;
 

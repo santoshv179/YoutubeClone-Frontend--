@@ -1,5 +1,4 @@
 
-
 import React, { useState, useContext } from 'react'
 import { apiService } from '../api/enhancedApi'
 import { EnhancedAuthContext } from '../context/EnhancedAuthContext'
@@ -24,14 +23,15 @@ export default function LoginPage() {
     setError('')
   }
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)
     setError('')
 
     try {
-      const response = await apiService.login(formData)
-      login(response.data.token)
+      const response = await apiService.login(formData)// make API call to login
+      login(response.data.token) //also response token
       navigate('/')
     } catch (err) {
       setError(err.response?.data?.message || 'Login failed')

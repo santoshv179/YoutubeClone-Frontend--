@@ -27,7 +27,7 @@ const VideoPlayer = ({ src }) => {
     );
   }
 
-  // Fallback to a standard video tag for direct video file URLs
+   //standard video tag for direct video file URLs
   return (
     <video
       className="w-full h-full"
