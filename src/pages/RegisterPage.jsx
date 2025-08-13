@@ -18,12 +18,13 @@ export default function RegisterPage() {
 
   const handleChange = (e) => {
     setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
+      ...formData, //
+      [e.target.name]: e.target.value // Update form data on input change
     })
     setError('')
   }
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault()
     setLoading(true)

@@ -2,6 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
+//any page not found then show
 export default function NotFound() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-900 text-white p-4">

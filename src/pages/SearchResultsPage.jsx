@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { apiService } from '../api/enhancedApi'; // 
-import VideoCard from '../components/VideoCard'; // 
+import { apiService } from '../api/enhancedApi'; 
+import VideoCard from '../components/VideoCard'; 
 
 export default function SearchResultsPage() {
   const [searchResults, setSearchResults] = useState([]);
