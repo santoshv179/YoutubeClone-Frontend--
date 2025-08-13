@@ -64,7 +64,7 @@
 
 ## 🚀 Getting Started
 
-git clone https://github.com/santoshv179/Youtube-Clone-Frontend-.git
+git clone https://github.com/santoshv179/YoutubeClone-Frontend--.git
 
 1. **Install dependencies:**
    ```bash
