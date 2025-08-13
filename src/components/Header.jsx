@@ -2,14 +2,14 @@ import React, { useContext, useState, useEffect } from 'react';
 import { EnhancedAuthContext } from '../context/EnhancedAuthContext';
 import { SidebarContext } from '../context/SidebarContext';
 import { Link, useNavigate } from 'react-router-dom';
-import { FaBars, FaUpload, FaUserCircle, FaSearch, FaYoutube, FaSignOutAlt, FaCog } from 'react-icons/fa';
+import { FaBars, FaUpload, FaUserCircle, FaSearch, FaYoutube, FaSignOutAlt, FaCog } from 'react-icons/fa';  // Import necessary icons
 
 export default function Header() {
   const { user, channel, hasChannel, logout, loading } = useContext(EnhancedAuthContext);
   const { toggleSidebar, toggleMobileSidebar } = useContext(SidebarContext);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
-  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false); // 🔹 New state for mobile search
+  const [isMobileSearchOpen, setIsMobileSearchOpen] = useState(false); // New state for mobile search
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function Header() {
     if (searchQuery.trim()) {
       navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
       setSearchQuery('');
-      setIsMobileSearchOpen(false); // 🔹 Close search bar after search
+      setIsMobileSearchOpen(false); //  Close search bar after search
     }
   };
 

@@ -4,8 +4,8 @@ import { FaUser, FaVideo } from 'react-icons/fa'
 
 export default function ChannelCard({ channel }) {
   const formatViews = (views) => {
-    if (views >= 1000000) return `${(views / 1000000).toFixed(1)}M`
-    if (views >= 1000) return `${(views / 1000).toFixed(1)}K`
+    if (views >= 1000000) return `${(views / 1000000).toFixed(1)}M`  // Format millions
+    if (views >= 1000) return `${(views / 1000).toFixed(1)}K`  // Format thousands
     return views.toString()
   }
 

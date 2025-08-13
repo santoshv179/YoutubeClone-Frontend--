@@ -18,7 +18,7 @@ export default function Sidebar() {
     { name: 'Library', href: '/library', icon: FaVideo },
   ];
 
-  // User navigation items after some  item show login 
+  // User navigation items after some item show login 
   const userNavigation = [
     { name: 'My Channel', href: '/channel/me', icon: FaUser, show: hasChannel },
     { name: 'Upload', href: '/upload', icon: FaUpload, show: hasChannel },

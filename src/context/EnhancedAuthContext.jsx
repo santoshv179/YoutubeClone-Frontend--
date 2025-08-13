@@ -9,6 +9,7 @@ export const EnhancedAuthProvider = ({ children }) => {
   const [token, setToken] = useState(localStorage.getItem('token') || null)
   const [loading, setLoading] = useState(true)
 
+  // Fetch user and channel data
   const fetchUserData = useCallback(async () => {
     if (!token) {
       setUser(null)
@@ -66,6 +67,7 @@ export const EnhancedAuthProvider = ({ children }) => {
     setChannel(null)
   }
 
+  // Refresh channel data
   const refreshChannel = async () => {
     if (!token) return
     try {

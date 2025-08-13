@@ -1,4 +1,3 @@
-
 import React, { useContext } from 'react';
 import { SidebarContext } from '../context/SidebarContext';
 import Header from '../components/Header';

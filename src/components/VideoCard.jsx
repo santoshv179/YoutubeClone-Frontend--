@@ -107,7 +107,7 @@ export default function VideoCard({ video, channel }) {
           {video.title}
         </h3>
 
-        {/* The fix: use a span and navigate programmatically */}
+        {/*  use a span and navigate programmatically */}
         <span
           className="text-gray-500 dark:text-gray-400 text-sm mt-1 inline-block hover:text-blue-500 transition-colors cursor-pointer"
           onClick={(e) => {

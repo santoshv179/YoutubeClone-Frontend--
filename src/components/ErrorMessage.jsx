@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+// src/components/ErrorMessage.jsx
 export default function ErrorMessage({ message, onRetry }) {
   return (
     <div className="flex flex-col items-center justify-center py-12">
